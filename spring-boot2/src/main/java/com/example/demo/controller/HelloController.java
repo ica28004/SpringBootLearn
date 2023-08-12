@@ -13,8 +13,9 @@ public class HelloController {
 		return "hello";
 	}
 	// @RequestParam(required = false)に変更する
+	// @defaultValueを設定したときは@RequestParam(required = false)となる
 	@GetMapping("/greeting")
-	public String greeting(@RequestParam(required = false) String message, Model model) {
+	public String greeting(@RequestParam(defaultValue = "Hi") String message, Model model) {
 		model.addAttribute("sample", message);
 		return "hello";
 	}
